@@ -17,8 +17,8 @@
 			[class.selected]="ship === selectedShipment" (click)="onSelect(ship)" 
 			[ngStyle]= "{background: ship.id > '12' ? '#ffd6dd':ship.id < '3' ? '#fffdd1':'white'}">
 			<td>{{ship.id}}</td>
-			<td>{{ship.pickupDate}}</td>
-			<td>{{ship.deliveryDate}}</td>
+			<td>{{ship.pickupDate | date : "M/d/yy h:mm a" }}</td>
+			<td>{{ship.deliveryDate  | date : "M/d/yy h:mm a"}}</td>
 			<td>{{ship.origin}}</td>
 			<td>{{ship.destination}}</td>
 			<td>{{ship.carrier}}</td>
