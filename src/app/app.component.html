@@ -1,0 +1,31 @@
+<h2 style="color: blue">Shipments</h2>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+	<table class="list-group">
+		<tr class="list-group-item list-group-item-info">
+			<th>ID</th>
+			<th>pickupDate</th>
+			<th>deliveryDate</th>
+			<th>origin</th>
+			<th>destination</th>
+			<th>carrier</th>
+			<th>commodity</th>
+			<th>weight</th>
+		</tr>
+		<tr *ngFor="let ship of shipments"
+			class="list-group-item list-group-item-info"
+			[class.selected]="ship === selectedShipment" (click)="onSelect(ship)">
+			<td>{{ship.id}}</td>
+			<td>{{ship.pickupDate}}</td>
+			<td>{{ship.deliveryDate}}</td>
+			<td>{{ship.origin}}</td>
+			<td>{{ship.destination}}</td>
+			<td>{{ship.carrier}}</td>
+			<td>{{ship.commodity}}</td>
+			<td>{{ship.weight}}</td>
+			<td><button >Ship</button></td>
+		</tr>
+	</table>
+	
+</div>
+
